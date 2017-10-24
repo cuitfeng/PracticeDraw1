@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ public class PageFragment extends Fragment {
     @LayoutRes int practiceLayoutRes;
 
     public static PageFragment newInstance(@LayoutRes int sampleLayoutRes, @LayoutRes int practiceLayoutRes) {
+        Log.d("TangXH", "PageFragment: newInstance() called with " + "sampleLayoutRes = [" + sampleLayoutRes + "], practiceLayoutRes = [" + practiceLayoutRes + "]");
         PageFragment fragment = new PageFragment();
         Bundle args = new Bundle();
         args.putInt("sampleLayoutRes", sampleLayoutRes);
@@ -45,6 +47,7 @@ public class PageFragment extends Fragment {
         if (args != null) {
             sampleLayoutRes = args.getInt("sampleLayoutRes");
             practiceLayoutRes = args.getInt("practiceLayoutRes");
+            Log.e("TangXH", "49: PageFragment: onCreate: " + sampleLayoutRes);
         }
     }
 }
